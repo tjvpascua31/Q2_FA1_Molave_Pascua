@@ -1,3 +1,5 @@
+# Functions
+
 def add_numbers(num1, num2):
 	return num1 + num2
 
@@ -10,7 +12,7 @@ def mul_numbers(num1, num2):
 def div_numbers(num1, num2):
 	return num1 / num2
 
-def input_w(text, conv, err_message):
+def input_wrapper(text, conv, err_message):
 	while True:
 		try:
 			result = conv(input(text))
@@ -18,10 +20,10 @@ def input_w(text, conv, err_message):
 		except ValueError:
 			print("Invalid!", err_message)
 
-double_errmsg = "Input must be a float"
-user_num1 = input_w("Enter First Number: ", float, double_errmsg)
-user_num2 = input_w("Enter First Number: ", float, double_errmsg)
-
+# Get user input via input_wrapper
+float_errmsg = "Input must be a float"
+user_num1 = input_wrapper("Enter First Number: ", float, float_errmsg)
+user_num2 = input_wrapper("Enter First Number: ", float, float_errmsg)
 print(
 """
 Operation option:
@@ -33,15 +35,17 @@ Operation option:
 Type the number that corresponds with the operation."""
 )
 
-opr = 0
+# Repeat input until a valid option (1, 2, 3, 4)
+operator = 0
 while True:
-	opr = input_w("Enter choice: ", int, "Enter an integer!")
-	if opr in range(1, 5):
+	operator = input_w("Enter choice: ", int, "Enter an integer!")
+	if operator in range(1, 5):
 		break
 	else:
 		print("Number must be in the choices!")
 
-match opr:
+# Match option with function
+match operator:
 	case 1:
 		result = add_numbers(user_num1, user_num2)
 	case 2:
