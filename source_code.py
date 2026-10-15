@@ -56,3 +56,18 @@ match operator:
 		result = div_numbers(user_num1, user_num2)
 
 print("Result:", result)
+
+"""
+After completing your program, answer the following questions:
+
+1. What functions did you create in your calculator program?
+add_number, sub_number, mul_number, div_number, and input_wrapper
+2. What parameters did your functions use?
+num1 and num2 for *_number and text, conv (converter function), and err_message for input_wrapper
+4. What arguments were passed when the functions were called?
+the users inpts and my hardcoded arguments
+5. How did your program use the returned value?
+my program printed it
+5. Why is it better to divide the calculator program into functions instead of writing everything in one long block of code?
+Because if you have to use the same block of code twice, you can just call the function instead of copy pasting the code
+"""
